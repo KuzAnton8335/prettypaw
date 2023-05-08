@@ -3,8 +3,17 @@ import './index.html';
 import 'swiper/scss';
 import 'swiper/scss/pagination';
 import './index.scss';
+import { sliderInit } from './modules/sliders';
 
 // use modules
+
+sliderInit('.about__slider', {
+	pagination: {
+		el: '.about__slider-pagination',
+		// bulletClass:'about__bullet',
+		// bulletActiveClass:'about__bullet-active'
+	}
+});
 
 const videoBG = document.querySelector('.video-bg');
 
