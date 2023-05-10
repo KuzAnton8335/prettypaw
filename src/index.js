@@ -15,11 +15,7 @@ sliderInit('.about__slider', {
 	}
 });
 
-sliderInit('.career__slider', {
-	pagination: {
-		el: '.career__slider-pagination',
-	}
-});
+
 
 const videoBG = document.querySelector('.video-bg');
 
