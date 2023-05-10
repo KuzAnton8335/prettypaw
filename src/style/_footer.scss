@@ -1,61 +1,71 @@
 .footer {
-	margin-top: 60px;
+	margin-top: 20px;
+	padding-bottom: 30px;
 
 	&__container {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 2fr 10px;
-		grid-column-gap: 20px;
-		grid-row-gap: 20px;
+		@include sm {
+			display: grid;
+			gap: 40px;
+			grid-template-columns: 1fr max-content;
+		}
+
+		@include lg {
+			gap: 72px;
+		}
 	}
 
 	&__logo {
+		width: 200px;
 		padding-bottom: 32px;
+
+		@include sm {
+			margin-bottom: 0;
+		}
+
+		@include lg {
+			width: 360px;
+		}
 	}
 
 	&__social-list {
 		display: flex;
 		align-items: center;
-		column-gap: 16px;
+		gap: 16px;
+		margin-bottom: 52px;
+
+		@include sm {
+			margin-bottom: 0;
+		}
 		@include lg {
-			column-gap: 32px;
+			gap: 36px;
 		}
 	}
 
 	&__social-link {
-		display: inline-block;
+		display: block;
 		width: 36px;
-		height: 36px;
 
 		@include lg {
 			width: 50px;
-			height: 50px;
 		}
 	}
 
 	&__developers {
+		margin-bottom: 52px;
+		@include sm {
+			order: 2;
+			margin-bottom: 0;
+		}
 		@include md {
 			grid-area: 2/2;
 		}
 	}
 
-	&__developers {
-		padding-top: 52px;
-
-		@include md {
-			padding-top: 0px;
-		}
-	}
-
 	&__developer {
-		padding-bottom: 19px;
-	}
+		margin-bottom: 19px;
 
-	&__developer-link {
-		font-size: 16px;
-	}
-
-	&__copyright {
-		font-size: 16px;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }

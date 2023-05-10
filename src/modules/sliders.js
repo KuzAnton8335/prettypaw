@@ -7,14 +7,14 @@ const params = {
 		delay: 3500,
 		disableOnInteraction: false,
 	},
-	sliderPerView: 1,
+	slidesPerView: 1,
 	pagination: {
 		el: ".swiper-pagination"
 	},
 	modules: [Autoplay, Pagination]
 };
 
-export const sliderInit = (selectorSlider,  newParams) => {
+export const sliderInit = (selectorSlider, newParams) => {
 	new Swiper(selectorSlider, {
 		...params,
 		...newParams,
