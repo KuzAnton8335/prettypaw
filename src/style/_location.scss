@@ -6,6 +6,16 @@
 			justify-content: space-between;
 			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 		}
+
+		@include xl {
+			min-height: 780px;
+		}
+
+		@include xxl {
+			min-height: 100vh;
+			max-width: 2560px;
+			margin: 0 auto;
+		}
 	}
 
 	&__item {
@@ -37,6 +47,18 @@
 			width: calc(100% - 32px);
 			background-color: $second;
 			transform: translate(50%, 0.5px);
+
+			@include lg {
+				bottom: 50%;
+				right: 0;
+				transform: translate(0.5px, 50%);
+				height: calc(100% - 186px);
+				width: 0.5px;
+			}
+
+			@include xl {
+				height: calc(100% - 200px);
+			}
 		}
 		&::before {
 			content: "";
@@ -59,6 +81,10 @@
 			@include sm {
 				background-image: url("../img/location-img/mammals_tablet_2x.jpg");
 			}
+
+			@include lg {
+				background-image: url("../img/location-laptop/mammals_laptop.jpg");
+			}
 		}
 
 		&_birds::before {
@@ -67,12 +93,20 @@
 			@include sm {
 				background-image: url("../img/location-img/birds_tablet_2x.jpg");
 			}
+
+			@include lg {
+				background-image: url("../img/location-laptop/birds_laptop.jpg");
+			}
 		}
 
 		&_reptiles::before {
 			background-image: url("../img/location-img/reptiles_tablet_2x.jpg");
 
 			@include sm {
+			}
+
+			@include lg {
+				background-image: url("../img/location-laptop/reptiles_laptop.jpg");
 			}
 		}
 
@@ -82,15 +116,21 @@
 			@include sm {
 				background-image: url("../img/location-img/water_tablet_2x.jpg");
 			}
+
+			@include lg {
+				background-image: url("../img/location-laptop/water_laptop.jpg");
+			}
 		}
 
 		&_insects::before {
 			background-image: url("../img/location-img/insects.jpg");
 
 			@include sm {
-				@include sm {
-					background-image: url("../img/location-img/insects_tablet_2x.jpg");
-				}
+				background-image: url("../img/location-img/insects_tablet_2x.jpg");
+			}
+
+			@include lg {
+				background-image: url("../img/location-laptop/insects_laptop.jpg");
 			}
 		}
 	}
@@ -102,6 +142,21 @@
 		text-transform: uppercase;
 		color: $back;
 		margin-bottom: 16px;
+		white-space: nowrap;
+
+		@include lg {
+			color: $second;
+			margin-bottom: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: rotate(-90deg) translate(-50%, -50%);
+			transform-origin: top left;
+		}
+
+		@include xl {
+			font-size: 32px;
+		}
 	}
 
 	&__descr {
