@@ -1,5 +1,8 @@
 .location {
+	position: relative;
 	&__list {
+		position: relative;
+		z-index: 10;
 		@include lg {
 			display: flex;
 			min-height: 552px;
@@ -67,6 +70,10 @@
 			inset: 0;
 			background-size: cover;
 			background-position: center center;
+
+			@include lg {
+				background-image: none;
+			}
 		}
 
 		&_mammals::before {
@@ -81,10 +88,6 @@
 			@include sm {
 				background-image: url("../img/location-img/mammals_tablet_2x.jpg");
 			}
-
-			@include lg {
-				background-image: url("../img/location-laptop/mammals_laptop.jpg");
-			}
 		}
 
 		&_birds::before {
@@ -93,20 +96,12 @@
 			@include sm {
 				background-image: url("../img/location-img/birds_tablet_2x.jpg");
 			}
-
-			@include lg {
-				background-image: url("../img/location-laptop/birds_laptop.jpg");
-			}
 		}
 
 		&_reptiles::before {
 			background-image: url("../img/location-img/reptiles_tablet_2x.jpg");
 
 			@include sm {
-			}
-
-			@include lg {
-				background-image: url("../img/location-laptop/reptiles_laptop.jpg");
 			}
 		}
 
@@ -116,10 +111,6 @@
 			@include sm {
 				background-image: url("../img/location-img/water_tablet_2x.jpg");
 			}
-
-			@include lg {
-				background-image: url("../img/location-laptop/water_laptop.jpg");
-			}
 		}
 
 		&_insects::before {
@@ -127,10 +118,6 @@
 
 			@include sm {
 				background-image: url("../img/location-img/insects_tablet_2x.jpg");
-			}
-
-			@include lg {
-				background-image: url("../img/location-laptop/insects_laptop.jpg");
 			}
 		}
 	}
@@ -167,6 +154,14 @@
 
 		@include lg {
 			display: none;
+		}
+	}
+
+	&__video-bg {
+		display: none;
+
+		@include lg {
+			display: block;
 		}
 	}
 }

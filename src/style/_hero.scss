@@ -38,6 +38,11 @@
 		background-image: url("../img/bg-hero-2x-xl.jpg");
 		background-image: image-set (url("../img/bg-hero-2x-xl.webp") 2x, url("../img/bg-hero-2x-xl.jpg") 2x);
 	}
+
+	@include xxl {
+		max-width: 2560px;
+		margin: 0 auto;
+	}
 	&__container {
 		min-height: 554px;
 		padding-top: 120px;

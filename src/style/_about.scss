@@ -73,6 +73,11 @@
 		@include xl {
 			gap: 57px;
 		}
+
+		@include xxl {
+			min-height: 600px;
+			height: min-content;
+		}
 	}
 
 	&__descr {
@@ -126,8 +131,6 @@
 		font-size: 24px;
 	}
 
-	
-
 	&__picture {
 		@include lg {
 			grid-area: slider;
@@ -138,5 +141,3 @@
 		border-radius: 16px;
 	}
 }
-
-
