@@ -103,11 +103,15 @@
 
 	&__count-list {
 		display: grid;
-		grid-template-columns: repeat(2, 120px);
+		grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
 		gap: 60px;
 		font-weight: 1000;
 		color: $second;
 		line-height: 1;
+
+		@include sm {
+			grid-template-columns: repeat(2fr, 120px);
+		}
 
 		@include md {
 			grid-area: list;

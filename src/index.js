@@ -6,11 +6,12 @@ import './index.scss';
 import { sliderInit } from './modules/sliders';
 import { videoBackroundInit } from './modules/video-bg';
 import { menuControl } from './modules/menuControl';
+import { locationHover } from './modules/locationHover';
 
 // use modules
 videoBackroundInit();
 menuControl();
-
+locationHover();
 
 sliderInit('.about__slider', {
 	pagination: {
@@ -19,6 +20,12 @@ sliderInit('.about__slider', {
 		// bulletActiveClass:'about__bullet-active'
 	}
 });
+
+const careerImageItems = document.querySelectorAll('.career__image-item');
+
+careerImageItems.forEach((item, i) => {
+	item.classList.add(`career__image-item_${i % 2 ? 'even' : 'odd'}`)
+})
 
 sliderInit('.career__slider', {
 	pagination: {
@@ -29,7 +36,7 @@ sliderInit('.career__slider', {
 	// Responsive breakpoints
 	breakpoints: {
 		// when window width is >= 768px
-		768: {
+		576: {
 			slidesPerView: 'auto',
 			spaceBetween: 20,
 			pagination: false

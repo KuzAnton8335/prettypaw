@@ -45,17 +45,34 @@
 		font-weight: 1000;
 		line-height: 1;
 		font-size: 16px;
+		outline: 2px solid transparent;
+		outline-offset: 5px;
+		padding: 0 5px;
+
+		&:focus:not(:hover) {
+			outline-color: $back;
+		}
 		&-active {
 			color: $back;
 			pointer-events: none;
 		}
 
+		@include lg {
+			&:hover {
+				color: $back;
+			}
+		}
+
 		@include xl {
 			display: block;
 			padding: 16px 30px;
-			border: 1px solid #ffaa05;
+			border: 1px solid $back;
 			border-radius: 80px;
+			outline: none;
 
+			&:focus:not(:hover) {
+				background-color: $back;
+			}
 			&-active {
 				color: inherit;
 				pointer-events: none;
