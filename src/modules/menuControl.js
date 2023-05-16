@@ -54,11 +54,16 @@ export const menuControl = () => {
 			navigationItems.forEach((elem, i) => {
 				const x = i % 2 ? 500 : -500;
 				gsap.set(elem, { opacity: 0, x, duration: 1 })
+
+				if (navigationButton.classList.contains('navigation__button-active')
+				) {
+					tl.restart();
+				}
 			})
 		}
 	};
 
-	const mediaQuery = window.matchMedia('(min-width:1280px)');
+	const mediaQuery = window.matchMedia('(min-width:1240px)');
 	mediaQuery.addEventListener('change', checkSreensize);
 	checkSreensize(mediaQuery);
 }
